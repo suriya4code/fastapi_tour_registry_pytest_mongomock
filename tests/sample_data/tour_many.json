@@ -1,0 +1,23 @@
+[
+    {
+        "tour_id": 2,
+        "place": "California",
+        "country": "USA",
+        "is_visa_needed": true,
+        "budget": 400000.00
+      },
+      {
+        "tour_id": 3,
+        "place": "Sydney",
+        "country": "Australia",
+        "is_visa_needed": true,
+        "budget": 200000.00
+      },
+      {
+        "tour_id": 4,
+        "place": "Bringiham",
+        "country": "England",
+        "is_visa_needed": true,
+        "budget": 500000.00
+      }
+]

@@ -1,0 +1,7 @@
+{
+    "tour_id": 1,
+    "place": "NewYork",
+    "country": "USA",
+    "is_visa_needed": true,
+    "budget": 300000.00
+  }
