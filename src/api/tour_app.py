@@ -46,8 +46,6 @@ def index():
 def add_tour(data: Tour):
     try:
         col = get_Collection()
-        print(data)
-        print(type(data))
         col.insert_one(data.dict())
         return {"status": "success"}
     except Exception as e:
@@ -79,7 +77,7 @@ def add_tour_list(request : TourList):
 
 
 @app.put('/api/update_tour_by_place')
-def update_tour(place: str, data: Tour):
+def update_tour_by_place(place: str, data: Tour):
     try:
         col = get_Collection()
         col.update_one({"place":place}, {"$set": data.dict()})
@@ -90,7 +88,7 @@ def update_tour(place: str, data: Tour):
 
 
 @app.delete('/api/delete_tour_by_place')
-def delete_tour(place: str):
+def delete_tour_by_place(place: str):
     try:
         col = get_Collection()
         col.delete_one({"place":place})

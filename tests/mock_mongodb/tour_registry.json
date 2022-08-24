@@ -1,0 +1,23 @@
+[
+    {
+      "tour_id": 91,
+      "place": "NewYork1",
+      "country": "USA",
+      "is_visa_needed": true,
+      "budget": 600000
+    },
+    {
+      "tour_id": 92,
+      "place": "California1",
+      "country": "USA",
+      "is_visa_needed": true,
+      "budget": 400000
+    },
+    {
+      "tour_id": 93,
+      "place": "Sydney1",
+      "country": "Australia",
+      "is_visa_needed": true,
+      "budget": 200000
+    }
+  ]
