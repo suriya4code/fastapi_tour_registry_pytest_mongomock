@@ -32,7 +32,7 @@ class TourList(BaseModel):
 def tour_list_serialiazer(tour_list):
     return [tour.dict() for tour in tour_list]
 
-@app.get('/api')
+@app.get('/api', tags=['Tour Registry'])
 def index():
     try:
         col = get_Collection()
@@ -42,17 +42,7 @@ def index():
         print(e)
         return {"error":str(e)}
 
-@app.post('/api/add_tour')
-def add_tour(data: Tour):
-    try:
-        col = get_Collection()
-        col.insert_one(data.dict())
-        return {"status": "success"}
-    except Exception as e:
-        print(e)
-        return {"error":str(e)}
-
-@app.get('/api/get_tour_by_place')
+@app.get('/api/get_tour_by_place', tags=['Tour Registry'])
 def get_tour_by_place(place):
     try:
         col = get_Collection()
@@ -62,7 +52,18 @@ def get_tour_by_place(place):
         print(e)
         return {"error":str(e)}
 
-@app.post('/api/add_tour_list')
+@app.post('/api/add_tour', tags=['Tour Registry'])
+def add_tour(data: Tour):
+    try:
+        col = get_Collection()
+        col.insert_one(data.dict())
+        return {"status": "success"}
+    except Exception as e:
+        print(e)
+        return {"error":str(e)}
+
+
+@app.post('/api/add_tour_list', tags=['Tour Registry'])
 def add_tour_list(request : TourList):
     try:
         col = get_Collection()
@@ -76,7 +77,7 @@ def add_tour_list(request : TourList):
         return {"error":str(e)}
 
 
-@app.put('/api/update_tour_by_place')
+@app.put('/api/update_tour_by_place', tags=['Tour Registry'])
 def update_tour_by_place(place: str, data: Tour):
     try:
         col = get_Collection()
@@ -87,7 +88,7 @@ def update_tour_by_place(place: str, data: Tour):
         return {"error":str(e)}
 
 
-@app.delete('/api/delete_tour_by_place')
+@app.delete('/api/delete_tour_by_place', tags=['Tour Registry'])
 def delete_tour_by_place(place: str):
     try:
         col = get_Collection()
