@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "a2f694cd-0b62-43b0-97c4-517400662c1a",
+		"name": "tour_registry",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5039851"
+	},
+	"item": [
+		{
+			"name": "get_tour_list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_tour_by_place",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/get_tour_by_place?place=NewYork",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"get_tour_by_place"
+					],
+					"query": [
+						{
+							"key": "place",
+							"value": "NewYork"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_tour_by_place",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/delete_tour_by_place?place=Bringiham",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"delete_tour_by_place"
+					],
+					"query": [
+						{
+							"key": "place",
+							"value": "Bringiham"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_tour",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"tour_id\": 4,\n        \"place\": \"Bringiham\",\n        \"country\": \"England\",\n        \"is_visa_needed\": true,\n        \"budget\": 500000.00\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/add_tour",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"add_tour"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_tour_by_place",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tour_id\": 1,\n    \"place\": \"NewYork\",\n    \"country\": \"USA\",\n    \"is_visa_needed\": true,\n    \"budget\": 600000\n  }"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/update_tour_by_place?place=NewYork",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"update_tour_by_place"
+					],
+					"query": [
+						{
+							"key": "place",
+							"value": "NewYork"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_tour_list",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"data\": [\n    {\n        \"tour_id\": 2,\n        \"place\": \"California\",\n        \"country\": \"USA\",\n        \"is_visa_needed\": true,\n        \"budget\": 400000.00\n      },\n      {\n        \"tour_id\": 3,\n        \"place\": \"Sydney\",\n        \"country\": \"Australia\",\n        \"is_visa_needed\": true,\n        \"budget\": 200000.00\n      },\n      {\n        \"tour_id\": 4,\n        \"place\": \"Bringiham\",\n        \"country\": \"England\",\n        \"is_visa_needed\": true,\n        \"budget\": 500000.00\n      }\n]\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/add_tour_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"add_tour_list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
